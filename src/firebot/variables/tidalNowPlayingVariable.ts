@@ -1,7 +1,7 @@
 import { ReplaceVariable } from "@crowbartools/firebot-types";
 import nowPlaying from "../../nowPlaying";
 
-const PROCESS_NAME = 'tidal';
+const PROCESS_NAME = "tidal"
 
 export const tidalNowPlayingVariable: ReplaceVariable = {
   definition: {

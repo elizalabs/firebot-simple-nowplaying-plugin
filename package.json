@@ -2,7 +2,7 @@
   "name": "firebot-simple-nowplaying-plugin",
   "displayName": "Simple Now Playing Plugin",
   "pluginOutputName": "firebot-simple-nowplaying-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Scrape an app for the currently playing track and allow it to be used in Firebot.",
   "main": "",
   "scripts": {
