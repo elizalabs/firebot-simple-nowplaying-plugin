@@ -1,23 +1,20 @@
 {
-  "name": "firebot-plugin-template",
-  "pluginOutputName": "starterPlugin",
-  "version": "1.0.0",
-  "description": "A starter Firebot plugin",
+  "name": "firebot-simple-nowplaying-plugin",
+  "displayName": "Simple Now Playing Plugin",
+  "pluginOutputName": "firebot-simple-nowplaying-plugin",
+  "version": "0.0.2",
+  "description": "Scrape an app for the currently playing track and allow it to be used in Firebot.",
   "main": "",
   "scripts": {
     "build": "tsdown",
     "build:dev": "npm run build && npm run copy",
-    "copy": "node ./scripts/copy-build.js",
-    "test": "jest"
+    "copy": "node ./scripts/copy-build.js"
   },
-  "author": "ebiggz",
+  "author": "elizalabs",
   "license": "GPL-3.0",
   "devDependencies": {
     "@crowbartools/firebot-types": "^5.67.0-alpha23",
-    "@types/jest": "^30.0.0",
     "@types/node": "^22.19.21",
-    "jest": "^30.0.0",
-    "ts-jest": "^29.4.0",
     "tsdown": "^0.22.0",
     "typescript": "^5.9.0"
   },

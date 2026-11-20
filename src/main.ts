@@ -1,36 +1,37 @@
 import firebot, { Plugin } from "@crowbartools/firebot-types";
-import exampleEffect from "./example-effect";
+
+import * as packageJson from "../package.json";
+import { AllVariables } from "./firebot/variables";
+
+const {
+  version,
+  displayName: name,
+  description,
+  author,
+} = packageJson;
 
 type Params = {
-  message: string;
+
 };
 
 const plugin: Plugin<Params> = {
   manifest: {
-    name: "Starter Plugin",
-    description: "A starter Firebot plugin",
+    name: name,
+    description: description,
     icon: {
       type: "font-awesome",
-      name: "fa-flask",
-      color: "#a106de",
+      name: "fa-volume",
+      color: "#ad7fe2",
     },
-    version: "1.0",
-    author: "SomeDev"
+    version: version,
+    author: author
   },
-  parametersSchema: [
-    {
-      name: "message",
-      type: "string",
-      default: "Hello World!",
-      title: "Hello!",
-      description: "Logged to the console when the plugin loads",
-    },
-  ],
+  parametersSchema: [],
   registers: {
-    effects: [exampleEffect],
+    variables: AllVariables
   },
   onLoad: (context) => {
-    firebot.logger.info(context.parameters.message);
+    firebot.logger.info(`${name} loaded (${version})`);
   },
 };
 
