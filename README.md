@@ -1,14 +1,42 @@
-# Starter Firebot Plugin
+# Firebot Simple Now Playing Plugin
 
-A template for building [Firebot](https://firebot.app) plugins (formerly known as "startup scripts") in TypeScript, bundled with [tsdown](https://tsdown.dev).
+A plugin for [Firebot](https://firebot.app) that gets the currently playing track from Tidal.
 
 > [!IMPORTANT]
-> This template targets the new plugin API that only works with **Firebot v5.67.0 or newer**. Earlier versions of Firebot are not supported.
+> This plugin targets the new plugin API that only works with **Firebot v5.67.0 or newer**. Earlier versions of Firebot are not supported.
 
-### Setup
+## Usage
 
-1. Create a new repo based off this template (click "Use this Template" above) or fork it.
-2. `npm install`
+### Installation
+
+1. Download firebot-simple-nowplaying-plugin.js and save it to `%APPDATA%\Firebot\v5\profiles\Main Profile\scripts\`
+2. In Firebot, go to Settings -> Plugins & Scripts
+3. If you see "Plugins & Scripts are disabled", click the "Enable" button
+4. Click "+ Install From File"
+5. Select firebot-simple-nowplaying-plugin.js
+
+### Variables
+
+This plugin offers the following variables that can be used in custom commands:
+
+- `$tidalNowPlaying`: Gets the current track playing in Tidal
+
+### Custom Command
+
+If you're setting up this plugin for the first time, you'll probably want to set up a custom command so that when someone sends, for example, `!song` in your chat, Firebot will respond with the currently playing media.
+
+1. In Firebot, go to Commands
+2. Click "New Custom Command"
+3. Give your command a name - something like `!song` or `!nowplaying`
+4. Scroll down, and click "+ Add Effect"
+5. Search for and select the "Chat" effect, and click "Select"
+6. Enter a message, for example, if you're using Tidal: `Currently playing: $tidalNowPlaying`
+7. Click "Save"
+8. Configure your command in any other ways you wish, such as setting an alias or cooldown
+9. Click "Save" again to save your command
+10. In your Twitch chat or Firebot's Dashboard, test your new command! Make sure you have something playing in the player for the variable you're using
+
+## Development
 
 ### Building
 
@@ -18,7 +46,7 @@ npm run build
 
 The compiled plugin is written to `dist/<pluginOutputName>.js` as a single file.
 
-### Installing in Firebot
+### Installing development version in Firebot
 1. Run `npm run build:dev`. This builds the plugin and automatically copies the `.js` file into Firebot's `scripts/` folder.
 2. In Firebot, open the plugin manager, click Install, and select your plugins `.js` file in your `scripts/` folder.
 
@@ -26,13 +54,7 @@ During development you can rerun `npm run build:dev` to have the latest code reb
 
 If Firebot is running, the command will also instruct Firebot to reload the plugin automatically as a form of hot-reload.
 
-### Testing
-
-```
-npm test
-```
-
-### Notes
+### Development Notes
 
 - Keep the plugin definition object (the one with `manifest`, `parametersSchema`, and `onLoad`) in `src/main.ts`. The build minifies output but preserves function names, which Firebot relies on to load the plugin.
 - `@crowbartools/firebot-types` is treated as an external dependency and is provided by Firebot at runtime - it is not bundled into your output.
