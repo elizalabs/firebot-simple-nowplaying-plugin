@@ -12,11 +12,12 @@ A plugin for [Firebot](https://firebot.app) that gets the currently playing trac
 
 ### Installation
 
-1. Download firebot-simple-nowplaying-plugin.js and save it to `%APPDATA%\Firebot\v5\profiles\Main Profile\scripts\`
-2. In Firebot, go to Settings -> Plugins & Scripts
-3. If you see "Plugins & Scripts are disabled", click the "Enable" button
-4. Click "+ Install From File"
-5. Select firebot-simple-nowplaying-plugin.js
+1. Download the latest [firebot-simple-nowplaying-plugin.js](https://github.com/elizalabs/firebot-simple-nowplaying-plugin/releases/latest/download/firebot-simple-nowplaying-plugin.js) either by clicking that link or navigating to Releases
+1. Put it in `%APPDATA%\Firebot\v5\profiles\Main Profile\scripts\`
+1. In Firebot, go to Settings -> Plugins & Scripts
+1. If you see "Plugins & Scripts are disabled", click the "Enable" button
+1. Click "+ Install From File"
+1. Select firebot-simple-nowplaying-plugin.js
 
 ### Variables
 
@@ -33,15 +34,15 @@ These variables return the artist & title in the order given by the player. Sinc
 If you're setting up this plugin for the first time, you'll probably want to set up a custom command so that when someone sends, for example, `!song` in your chat, Firebot will respond with the currently playing media.
 
 1. In Firebot, go to Commands
-2. Click "New Custom Command"
-3. Give your command a name - something like `!song` or `!nowplaying`
-4. Scroll down, and click "+ Add Effect"
-5. Search for and select the "Chat" effect, and click "Select"
-6. Enter a message, for example, if you're using Tidal: `Currently playing: $tidalNowPlaying`
-7. Click "Save"
-8. Configure your command in any other ways you wish, such as setting an alias or cooldown
-9. Click "Save" again to save your command
-10. In your Twitch chat or Firebot's Dashboard, test your new command! Make sure you have something playing in the player for the variable you're using
+1. Click "New Custom Command"
+1. Give your command a name - something like `!song` or `!nowplaying`
+1. Scroll down, and click "+ Add Effect"
+1. Search for and select the "Chat" effect, and click "Select"
+1. Enter a message, for example, if you're using Tidal: `Currently playing: $tidalNowPlaying`
+1. Click "Save"
+1. Configure your command in any other ways you wish, such as setting an alias or cooldown
+1. Click "Save" again to save your command
+1. In your Twitch chat or Firebot's Dashboard, test your new command! Make sure you have something playing in the player for the variable you're using
 
 ## Development
 
@@ -55,7 +56,7 @@ The compiled plugin is written to `dist/<pluginOutputName>.js` as a single file.
 
 ### Installing development version in Firebot
 1. Run `npm run build:dev`. This builds the plugin and automatically copies the `.js` file into Firebot's `scripts/` folder.
-2. In Firebot, open the plugin manager, click Install, and select your plugins `.js` file in your `scripts/` folder.
+1. In Firebot, open the plugin manager, click Install, and select your plugins `.js` file in your `scripts/` folder.
 
 During development you can rerun `npm run build:dev` to have the latest code rebuilt and copied over again.
 
