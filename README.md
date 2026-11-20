@@ -1,9 +1,12 @@
 # Firebot Simple Now Playing Plugin
 
-A plugin for [Firebot](https://firebot.app) that gets the currently playing track from Tidal.
+A plugin for [Firebot](https://firebot.app) that gets the currently playing track from Tidal or Spotify. It read the player's window title. The player must be running on the same machine that Firebot is on.
 
 > [!IMPORTANT]
 > This plugin targets the new plugin API that only works with **Firebot v5.67.0 or newer**. Earlier versions of Firebot are not supported.
+
+> [!NOTE]
+> This plugin currently only works on Windows 10/11.
 
 ## Usage
 
@@ -17,9 +20,13 @@ A plugin for [Firebot](https://firebot.app) that gets the currently playing trac
 
 ### Variables
 
-This plugin offers the following variables that can be used in custom commands:
+This plugin offers the following variables that can be used in custom commands and elsewhere:
 
-- `$tidalNowPlaying`: Gets the current track playing in Tidal
+- `$tidalNowPlaying`: Gets the current track playing in Tidal, in the order `title - artist`
+- `$spotifyNowPlaying`: Gets the current track playing in Spotify, in the order `artist - title`
+  - Podcasts will return the episode title, as formatted in Spotify
+
+These variables return the artist & title in the order given by the player. Since they are separated by a `-` and artist names and track titles can also include a `-`, this plugin does _not_ attempt to fix the order, or give you the option to select your desired order. If you'd like to try reordering artist & title anyway, you can do so with Firebot variables.
 
 ### Custom Command
 
