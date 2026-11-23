@@ -23,6 +23,8 @@ A plugin for [Firebot](https://firebot.app) that gets the currently playing trac
 
 Included in this repository are 3 Firebot Setups which will add a simple now playing command to your Firebot. All 3 commands have an alias of `!song` as well as the main command.
 
+Save one of these to your computer, then in Firebot go to File -> Firebot Setups -> Import Firebot Setup... and import the `.firebotsetup` file you downloaded.
+
 - [!tidal command.firebotsetup](/firebot-setups/!tidal%20command.firebotsetup?raw): A `!tidal`/`!song` command to get current track playing in Tidal
 - [!spotify command.firebotsetup](/firebot-setups/!spotify%20command.firebotsetup?raw): A `!spotify`/`!song` command to get current track playing in Spotify
 - [!tidalspotify command.firebotsetup](/firebot-setups/!tidalspotify%20command.firebotsetup?raw): A `!tidalspotify`/`!song` command to get current track playing in Tidal, and if nothing is playing in Tidal, get the current track playing in Spotify. If you'd like to check Spotify first and fall back to Tidal instead, you can use this as a starting point
